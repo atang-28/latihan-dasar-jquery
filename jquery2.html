@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 2</title>
+</head>
+<body>
+    <button class="konten1">Konten 1</button>
+    <button class="konten2">Konten 2</button>
+
+    <select id="pilihan">
+        <option selected="selected">pilih konten</option>
+        <option value="k1">Konten 1</option>
+        <option value="k2">Konten 2</option>
+    </select>
+
+    <div class="isi1">
+        <h3>Isi Konten 1</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae voluptate eum nesciunt consequuntur nulla. Dicta qui esse ipsam labore? Et vel ducimus laboriosam accusantium exercitationem, molestias modi dicta tenetur ea?
+    </div>
+    <div class="isi2">
+        <h3>Isi Konten 2</h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae voluptate eum nesciunt consequuntur nulla. Dicta qui esse ipsam labore? Et vel ducimus laboriosam accusantium exercitationem, molestias modi dicta tenetur ea?
+    </div>
+    
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // sembunyi konten
+            $(".isi2").hide();
+            $(".isi1").hide();
+
+            // klik untuk buka a dan tutup b sebaliknya
+            $(".konten1").click(function(){
+                $(".isi1").show(1200);
+                $(".isi2").hide();
+            })
+
+            $(".konten2").click(function(){
+                $(".isi1").hide();
+                $(".isi2").show(1200);
+            })
+            
+            $("#pilihan").change(function(){
+                let nilai = $("#pilihan").val();
+                switch(nilai){
+                    case "k1":
+                        $(".isi1").show(1200);
+                        $(".isi2").hide();
+                        break;
+                    case "k2":
+                        $(".isi1").hide();
+                        $(".isi2").show(1200);
+                        break;
+                    default:
+                        $(".isi1").hide();
+                        $(".isi2").hide();
+                        break;
+                }
+            })
+
+        })
+    </script>
+</body>
+</html>

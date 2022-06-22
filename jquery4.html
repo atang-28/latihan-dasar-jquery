@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas Bangun datar</title>
+</head>
+<body>
+    <button class="persegi">Persegi</button>
+    <button class="segitiga">Segitiga</button>
+
+    <div id="persegi">
+        <h3>Luas Persegi</h3>
+        <label for="sisi">Sisi</label>
+        <input type="text" id="sisi" placeholder="masukkan nilai sisi persegi"><br><br>
+        <label for="luas4">Luas</label>
+        <input type="text" id="luas4" disabled>
+    </div>
+
+    <div id="segitiga">
+        <h3>Luas Segitiga</h3>
+        <label for="alas">Alas</label>
+        <input type="text" id="alas" placeholder="masukkan nilai alas segitiga"><br><br>
+        <label for="tinggi">Tinggi</label>
+        <input type="text" id="tinggi" placeholder="masukkan nilai Tinggi segitiga"><br><br>
+        <button id="hasil">Hitung Luas</button><br><br>
+        <label for="luas3">Luas</label>
+        <input type="text" id="luas3" disabled>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#persegi").hide();
+            $("#segitiga").hide();
+
+            $(".persegi").click(function(){
+                $("#persegi").show(1200);
+                $("#segitiga").hide();
+            })
+
+            $(".segitiga").click(function(){
+                $("#persegi").hide();
+                $("#segitiga").show(1200);
+            })
+
+            let s = 0;
+            let a = 0;
+            let t = 0;
+            let l = 0;
+
+            // rumus luas persegi
+            $("#sisi").change(function(){
+                s = $("#sisi").val();
+                l = s * s;
+                $("#luas4").val(l);
+            })
+
+            // rumus luas segitiga
+            $("#hasil").click(function(){
+                a = $("#alas").val();
+                t = $("#tinggi").val();
+                l = a*t/2;
+                $("#luas3").val(l);
+            })
+            })
+    </script>
+
+</body>
+</html>
